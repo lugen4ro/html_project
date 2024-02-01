@@ -1,3 +1,6 @@
+/* Combine this and normalize into one stylesheet for better download performance (Parcel will do that)*/
+@import "normalize.css";
+
 /* Pseudoelement for root which tends to be html */
 :root {
     --color-primary: #2584ff;
@@ -20,6 +23,7 @@
 html {
     /* To make 1rem = 10px for default settings (Default browser font-size is 16px)*/
     font-size: 62.5%;
+    overflow-x: hidden; /* Because AOS animations from left and right cause margin */
 }
 
 body {
@@ -513,7 +517,6 @@ a {
 /* -------------------- Testimonial  -------------------- */
 
 .testimonial {
-    margin: 3rem;
     padding: 3rem 6rem;
 }
 
@@ -537,7 +540,8 @@ a {
     }
     .testimonial .quote,
     .testimonial .quote__author {
-        font-size: 2.4rem;
+        font-size: 120%;
+        line-height: 1.5;
     }
 
     .testimonial .quote {
